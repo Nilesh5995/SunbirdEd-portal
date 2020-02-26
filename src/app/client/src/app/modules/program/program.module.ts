@@ -17,8 +17,9 @@ import { DynamicModule } from 'ng-dynamic-component';
 import { CbseProgramModule } from '../../modules/cbse-program/cbse-program.module';
 import { CollectionComponent, DashboardComponent } from '../cbse-program';
 import { CommonConsumptionModule} from '@project-sunbird/common-consumption';
+import { EnrollContributorComponent } from './components/enroll-contributor/enroll-contributor.component';
 @NgModule({
-  declarations: [ListAllProgramsComponent, ProgramComponent, OnboardPopupComponent, ProgramHeaderComponent],
+  declarations: [ListAllProgramsComponent, ProgramComponent, OnboardPopupComponent, ProgramHeaderComponent,EnrollContributorComponent  ],
   imports: [
     SuiModule,
     CommonModule,
@@ -32,11 +33,12 @@ import { CommonConsumptionModule} from '@project-sunbird/common-consumption';
     NgInviewModule,
     TelemetryModule,
     CbseProgramModule,
+    
     DynamicModule.withComponents([CollectionComponent, DashboardComponent])
   ],
   exports: [
     ProgramComponent,
-    OnboardPopupComponent
+    OnboardPopupComponent,
   ]
 })
 export class ProgramModule { }
