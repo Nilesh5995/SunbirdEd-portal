@@ -43,10 +43,11 @@ export class CreateFormApiService {
 
   createForm(requestParam: RequestParam): Observable<ServerResponse> {
     const httpOptions: HttpOptions = {
+      //Need to add the bearer token
       headers: {
-        'Authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyNmJsSXVBRk1WdHlZREVMMklrb2FWWUpLdnlWdmhOcSJ9.vBLZ2zYVX3tcG9wmoa_5eWKor_SRpv5gXsl7ZxKl99I',
+        'Authorization': 'bearer ',
         'Content-Type': 'application/json',
-        'X-Authenticated-User-Token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyNmJsSXVBRk1WdHlZREVMMklrb2FWWUpLdnlWdmhOcSJ9.vBLZ2zYVX3tcG9wmoa_5eWKor_SRpv5gXsl7ZxKl99I'
+        'X-Authenticated-User-Token': ''
       }
     };
     //'http://localhost:3000/api/data/v1/form/read'
