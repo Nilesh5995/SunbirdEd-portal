@@ -5,6 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   {
+    path: 'forms', loadChildren: 'app/modules/forms-api/forms-api.module#FormsApiModule'
+  },
+  {
     path: 'learn/course', loadChildren: 'app/modules/learn/course-consumption.module#CourseConsumptionModule'
   },
   {

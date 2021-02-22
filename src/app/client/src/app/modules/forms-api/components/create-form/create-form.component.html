@@ -1,0 +1,98 @@
+<div class="margin-30" *ngIf="showForm">
+  <form class="ui form" [formGroup]="formCreationForm">
+    <h4 class="ui dividing header">Form Creation</h4>
+    <div class="field">
+      <!-- <div class="two fields">
+        <div class="field">
+          <label>ID</label>
+          <input type="text" name="id" formControlName="id" placeholder="Enter Id">
+        </div>
+        <div class="field">
+          <label>Ver</label>
+          <input type="text" name="ver" formControlName="ver" placeholder="Enter Ver">
+        </div>
+      </div>
+      <h5 class="ui dividing header">Params</h5>
+      <div class="two fields">
+        <div class="field">
+          <label>Msg Id</label>
+          <input type="text" name="msgid" formControlName="msgid" placeholder="Enter msgid">
+        </div>
+        <div class="field">
+          <label>Did</label>
+          <input type="text" name="did" formControlName="did" placeholder="Enter msgid">
+        </div>
+      </div> -->
+      <h5 class="ui dividing header">Request</h5>
+      <div class="two fields">
+        <div class="field sb-field required field">
+          <label>Type</label>
+          <input type="text" name="type" formControlName="type" placeholder="Enter type">
+          <div class="ui pointing red basic label below " *ngIf="formCreationForm.controls['type'].errors && formCreationForm.controls['type'].errors.required && (!formCreationForm.controls['type'].pristine || formIsInvalid)">
+            * This Field is required
+         </div>
+        </div>
+        <div class="field sb-field required field">
+          <label>Subtype</label>
+          <input type="text" name="subType"  formControlName="subType" placeholder="Enter subtype">
+          <div class="ui pointing red basic label below " *ngIf="formCreationForm.controls['subType'].errors && formCreationForm.controls['subType'].errors.required && (!formCreationForm.controls['subType'].pristine || formIsInvalid)">
+            * This Field is required
+         </div>
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field sb-field required field">
+          <label>Action</label>
+          <input type="text" name="action"  formControlName="action" placeholder="Enter action">
+          <div class="ui pointing red basic label below " *ngIf="formCreationForm.controls['action'].errors && formCreationForm.controls['action'].errors.required && (!formCreationForm.controls['action'].pristine || formIsInvalid)">
+            * This Field is required
+         </div>
+        </div>
+        <div class="field sb-field required field">
+          <label>Framework</label>
+          <input type="text" name="framework"  formControlName="framework" placeholder="Enter framework">
+          <div class="ui pointing red basic label below " *ngIf="formCreationForm.controls['framework'].errors && formCreationForm.controls['framework'].errors.required && (!formCreationForm.controls['framework'].pristine || formIsInvalid)">
+            * This Field is required
+         </div>
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field sb-field required field" >
+          <label>Root Org Id</label>
+          <input type="text" name="rootOrgId" [attr.disabled]="{ 'disabled' : isOrgIdDisabled }" formControlName="rootOrgId" placeholder="Enter rootOrgId">
+          <div class="ui pointing red basic label below "  *ngIf="formCreationForm.controls['rootOrgId'].errors && formCreationForm.controls['rootOrgId'].errors.required && (!formCreationForm.controls['rootOrgId'].pristine || formIsInvalid)">
+            * This Field is required
+         </div>
+        </div>
+      </div>
+      <h5 class="ui dividing header">Data</h5>
+      <div class="two fields">
+        <div class="field sb-field required field">
+          <label>Template Name</label>
+          <input type="text" name="templateName"  formControlName="templateName" placeholder="Enter Template name">
+          <div class="ui pointing red basic label below " *ngIf="formCreationForm.controls['templateName'].errors && formCreationForm.controls['templateName'].errors.required && (!formCreationForm.controls['templateName'].pristine || formIsInvalid)">
+            * This Field is required
+         </div>
+        </div>
+        <!-- <div class="field sb-field required field">
+          <label>Action</label>
+          <input type="text" name="shipping[last-name]" placeholder="Enter action">
+        </div> -->
+      </div>
+      <div class="field sb-field required field">
+        <label>Fields (JSON)</label>
+        <textarea formControlName="fields"></textarea>
+        <div class="ui pointing red basic label below " *ngIf="formCreationForm.controls['fields'].errors && formCreationForm.controls['fields'].errors.required && (!formCreationForm.controls['fields'].pristine || formIsInvalid)">
+          * This Field is required
+       </div>
+      </div>
+      <button class="sb-btn sb-btn-normal sb-btn-primary"
+         (click)="validateFields()">
+         Submit
+       </button>
+    </div>
+  </form>
+</div>
+
+
+<!-- <sb-form [config]="filterConfig" (initialize)="outputData($event)" [platform]="'web'"></sb-form> -->
